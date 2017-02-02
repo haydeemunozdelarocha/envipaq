@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="body">
+  <% include ./partials/_adminheader.ejs %>
+  <div id="table-container">
+  <form action="/buscar" method="post">
+        <input type="text" name="tracking" id="tracking" placeholder="Tracking Number">
+        <input type="text" name="usuario" id="usuario" placeholder="Apartado Postal">
+        <button class="btn btn-success">Entregas</button>
+  </form>
+  <div id="table">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Resultados</div>
+  <!-- Table -->
+    <table class="table">
+        <tr>
+      <td>id</td>
+      <td>id_usuario</td>
+     <td>fletera</td>
+      <td>tracking number</td>
+      <td>fecha entrega</td>
+      <td></td>
+     </tr>
+    <% if(paquetes.length > 0){
+    for(var i=0; i<paquetes.length; i++) {%>
+    <tr>
+      <td><%= paquetes[i].paquete_id %></td>
+      <td><%= paquetes[i].usuario %></td>
+     <td><%= paquetes[i].fletera %></td>
+      <td><%= paquetes[i].tracking_number %></td>
+      <td><%= paquetes[i].fecha_entrega %></td>
+      <td><a href="paquetes/<%= paquetes[i].paquete_id %>">Edit</a></td>
+      <td><a href="paquetes/<%= paquetes[i].paquete_id %>">Delete</a></td>
+     </tr>
+    <% }} %>
+    </table>
+  </div>
+</div>
+      <script src="/javascripts/script.js" type="text/javascript" charset="utf-8" async defer></script>
+
+</body>
+</html>

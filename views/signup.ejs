@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Regístrate</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="body">
+ <% include ./partials/_header.ejs %>
+ <div class="page-title">
+   <h2> Step 1:</h2>
+  <br>
+  <p>Please create a username and password:</p>
+    <div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+    <span class="sr-only">30% Complete</span>
+  </div>
+  </div>
+  </div>
+  <div class="signup-form">
+  <div class="panel panel-default signup">
+      <div class="panel-body signup-form-container" >
+        <form action="/signup" method="post">
+          <label for=""><p>Username</p></label>
+          <input type="text" name="username" id="username" placeholder="username">
+          <label for=""><p>Password</p></label>
+          <input type="password" name="password" id="password" placeholder="password">
+          <button class="btn btn-danger">Sign Up</button>
+      </form>
+      </div>
+  </div>
+</div>
+</body>
+</html>

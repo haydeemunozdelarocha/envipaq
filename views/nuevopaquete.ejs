@@ -1,0 +1,91 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nuevo Paquete</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+   <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="body">
+ <% include ./partials/_adminheader.ejs %>
+<div id="content-container-left">
+<div class="row add-paquete">
+  <div class="col-sm-8">
+  <div class="panel panel-default paquete-left">
+      <div class="panel-body" >
+      <div class="paquete-form">
+          <label for=""><p>Cuenta</p>
+          <select name="usuario" id="usuario" style="width:200px">
+          <% for(var i=0; i<usuarios.length; i++) {%>
+          <option value="<%= usuarios[i].numero %>"><%= usuarios[i].nombre %></option>
+          <% } %>
+          </select>
+          </label>
+          <label for=""><p>Fletera</p>
+          <select name="fleteras" id="fleteras">
+          <% for(var i=0; i<fleteras.length; i++) {%>
+          <option value="<%= fleteras[i].nombre %>"><%= fleteras[i].nombre %></option>
+          <% } %>
+          </select>
+          </label>
+          <label for=""><p>Tracking Number</p>
+          <input type="text" name="trackingnumber" id="trackingnumber" placeholder="Tracking Number">
+          </label>
+          <label for=""><p>Remitente</p>
+          <input type="text" name="remitente" id="remitente" placeholder="Remitente">
+          </label>
+          <label for=""><p>Peso</p>
+          <input type="text" name="peso" id="peso" placeholder="Peso">
+          </label>
+          <label for=""><p>Categoría</p>
+          <select name="categoria" id="categoria">
+          <option value="1">Sobre Chico</option>
+          <option value="2">Sobre Grande</option>
+          <option value="3">Caja Chica</option>
+          <option value="4">Caja Mediana</option>
+          <option value="5">Caja Grande</option>
+          <option value="6">Caja Extra Grande</option>
+          </select>
+          </label>
+                    </div>
+          <button class="btn btn-danger" style="float:right" onclick="agregarPaquete()">Agregar</button>
+          </div>
+          </div>
+            <div class="panel panel-default paquete-left remesa">
+              <div class="panel-body" >
+               <table class="table table-striped" style="font-size: 14px" id="paquetes-table">
+              <tr>
+              <td>ID</td>
+              <td>Cuenta</td>
+              <td>Fletera</td>
+              <td>Tracking #</td>
+              <td>Remitente</td>
+              <td>Peso</td>
+              <td>Categoría</td>
+            </tr>
+            </table>
+            </div>
+          </div>
+          </div>
+            <div class="col-sm-4">
+            <div class="panel panel-default paquete-total">
+            <div class="panel-body right-panel" >
+             <table class="table" id="tabla-precios">
+            </table>
+          <br>
+          <br>
+           <label for=""><p>Total</p>
+          $<input type="text" name="monto" id="monto" readonly placeholder="Total">
+          </label>
+          <br>
+          <br>
+          <button class="btn btn-danger" onclick="guardarOrden()" style="align-items: flex-end; justify-content: flex-end;">Guardar</button>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+<script src="/javascripts/script.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

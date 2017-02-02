@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body class="body">
+  <% include ./partials/_adminheader.ejs %>
+  <div id="table-container">
+  <form action="/buscar" method="post">
+        <input type="text" name="tracking" id="tracking" placeholder="Nombre">
+        <button class="btn btn-danger">Cuentas</button>
+  </form>
+  <div id="table">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Cuentas</div>
+  <!-- Table -->
+    <table class="table">
+        <tr>
+      <td>id</td>
+      <td>nombre</td>
+     <td>plan</td>
+      <td>suscripcion</td>
+      <td>vencimiento</td>
+      <td></td>
+     </tr>
+    <% if(usuarios.length > 0){
+    for(var i=0; i<usuarios.length; i++) {%>
+    <tr>
+      <td><%= usuarios[i].usuario_id %></td>
+      <td><%= usuarios[i].username %></td>
+     <td><%= usuarios[i].plan %></td>
+      <td><%= usuarios[i].fecha_registro %></td>
+      <td><%= usuarios[i].vencimiento_plan %></td>
+      <td><%= usuarios[i].paquetes_mensuales %></td>
+      <td><a href="cuentas/<%= usuarios[i].id %>">Edit</a></td>
+      <td><a href="cuentas/<%= usuarios[i].id %>">Delete</a></td>
+     </tr>
+    <% }} %>
+    </table>
+  </div>
+</div>
+      <script src="/javascripts/script.js" type="text/javascript" charset="utf-8" async defer></script>
+
+</body>
+</html>

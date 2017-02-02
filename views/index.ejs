@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+       <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body class="body">
+    <% include ./partials/_header.ejs %>
+  <div id="content-container">
+    <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Básico</h1>
+        <p>El paquete básico es recomendable para 1 o 2 personas que no reciben mucho volumen.</p>
+      <ul class="list-group">
+        <li class="list-group-item">5 paquetes al mes</li>
+        <li class="list-group-item">Correspondencia ilimitada</li>
+        <li class="list-group-item">Servicio al cliente</li>
+    </ul>
+    <button type="button" onclick="window.location.href='/signup'" class="btn btn-danger">Elegir</button>
+      </div>
+      </div>
+  </div>
+  <div class="col-sm-4">
+          <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Plus</h1>
+        <p>El paquete plus es recomendable para familias.</p>
+      <ul class="list-group">
+        <li class="list-group-item">10 paquetes al mes</li>
+        <li class="list-group-item">Correspondencia ilimitada</li>
+        <li class="list-group-item">Servicio al cliente</li>
+    </ul>
+    <button type="button" onclick="window.location.href='signup'" class="btn btn-danger">Elegir</button>
+      </div>
+      </div>
+  </div>
+  <div class="col-sm-4">
+        <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Super</h1>
+        <p>El paquete super es recomendable para alto volumen.</p>
+      <ul class="list-group">
+        <li class="list-group-item">15 paquetes al mes</li>
+        <li class="list-group-item">Correspondencia ilimitada</li>
+        <li class="list-group-item">Servicio al cliente</li>
+    </ul>
+    <button type="button" onclick="window.location.href='signup'" class="btn btn-danger">Elegir</button>
+      </div>
+      </div>
+  </div>
+</div>
+</body>
+  </body>
+</html>
