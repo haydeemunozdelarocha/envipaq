@@ -3,9 +3,9 @@ var mysql = require('promise-mysql');
 
 var db_config      =    mysql.createPool({
     connectionLimit : 150, //important
-    host     : 'us-cdbr-iron-east-04.cleardb.net',
-    user     : 'b4e1e2c94d4362',
-    password : 'a70021e8',
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    password : process.env.DB_PSS,
     database : 'heroku_b6e69546b135d2b',
     debug    :  false,
     multipleStatements: true,
